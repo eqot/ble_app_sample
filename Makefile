@@ -200,10 +200,10 @@ clean:
 cleanobj:
 	$(RM) $(BUILD_DIRECTORIES)/*.o
 
-flash: $(MAKECMDGOALS)
-	@echo Flashing: $(OUTPUT_BINARY_DIRECTORY)/$<.hex
-	nrfjprog --reset --program $(OUTPUT_BINARY_DIRECTORY)/$<.hex
-
+# flash: $(MAKECMDGOALS)
+# 	@echo Flashing: $(OUTPUT_BINARY_DIRECTORY)/$<.hex
+# 	nrfjprog --reset --program $(OUTPUT_BINARY_DIRECTORY)/$<.hex
+#
 ## Flash softdevice
 # flash_softdevice:
 # 	@echo Flashing: s110_softdevice.hex
