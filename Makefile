@@ -42,6 +42,7 @@ C_SOURCE_FILES += \
 src/main.c \
 src/advertising.c \
 src/security.c \
+src/timer.c \
 src/button.c \
 src/power.c \
 $(SDK_PATH)/components/libraries/button/app_button.c \
