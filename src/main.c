@@ -30,6 +30,7 @@
 #include "error.h"
 #include "gap.h"
 #include "advertising.h"
+#include "service.h"
 #include "connection.h"
 #include "security.h"
 #include "ble_stack.h"
@@ -38,14 +39,6 @@
 #include "gpiote.h"
 #include "power.h"
 #include "bsp_module.h"
-
-
-/**@brief Function for initializing services that will be used by the application.
- */
-static void services_init(void)
-{
-    // YOUR_JOB: Add code to initialize the services used by the application.
-}
 
 
 /**@brief Function for application main entry.

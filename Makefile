@@ -43,6 +43,7 @@ src/main.c \
 src/error.c \
 src/gap.c \
 src/advertising.c \
+src/service.c \
 src/connection.c \
 src/security.c \
 src/ble_stack.c \
