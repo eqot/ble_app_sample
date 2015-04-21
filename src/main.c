@@ -44,6 +44,8 @@
 #include "bsp.h"
 
 #include "advertising.h"
+#include "power.h"
+
 
 #define IS_SRVC_CHANGED_CHARACT_PRESENT 0                                           /**< Include or not the service_changed characteristic. if not enabled, the server's database cannot be changed for the lifetime of the device*/
 
@@ -483,15 +485,6 @@ static void buttons_init(void)
     // Note: If the only use of buttons is to wake up, the bsp module can be omitted, and
     // the wakeup button can be configured by
     err_code = bsp_buttons_enable(1 << WAKEUP_BUTTON_ID);
-    APP_ERROR_CHECK(err_code);
-}
-
-
-/**@brief Function for the Power manager.
- */
-static void power_manage(void)
-{
-    uint32_t err_code = sd_app_evt_wait();
     APP_ERROR_CHECK(err_code);
 }
 
