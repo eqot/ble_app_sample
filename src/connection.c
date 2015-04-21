@@ -4,7 +4,6 @@
 #include "app_error.h"
 #include "ble.h"
 #include "ble_hci.h"
-#include "ble_conn_params.h"
 #include "app_timer_appsh.h"
 
 #include "connection.h"
@@ -16,7 +15,7 @@
 #define MAX_CONN_PARAMS_UPDATE_COUNT    3                                           /**< Number of attempts before giving up the connection parameter negotiation. */
 
 
-static uint16_t                         m_conn_handle = BLE_CONN_HANDLE_INVALID;    /**< Handle of the current connection. */
+uint16_t                         m_conn_handle = BLE_CONN_HANDLE_INVALID;    /**< Handle of the current connection. */
 
 
 /**@brief Function for handling the Connection Parameters Module.

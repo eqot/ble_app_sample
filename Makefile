@@ -40,13 +40,19 @@ remduplicates = $(strip $(if $1,$(firstword $1) $(call remduplicates,$(filter-ou
 #source common to all targets
 C_SOURCE_FILES += \
 src/main.c \
+src/error.c \
+src/gap.c \
 src/advertising.c \
+src/service.c \
 src/connection.c \
 src/security.c \
+src/ble_stack.c \
 src/timer.c \
 src/scheduler.c \
 src/button.c \
+src/gpiote.c \
 src/power.c \
+src/bsp_module.c \
 $(SDK_PATH)/components/libraries/button/app_button.c \
 $(SDK_PATH)/components/libraries/util/app_error.c \
 $(SDK_PATH)/components/libraries/gpiote/app_gpiote.c \
