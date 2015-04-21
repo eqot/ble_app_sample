@@ -13,7 +13,7 @@
 #define SEC_PARAM_MAX_KEY_SIZE      16                      /**< Maximum encryption key size. */
 
 
-static ble_gap_sec_params_t         m_sec_params;           /**< Security requirements for this application. */
+ble_gap_sec_params_t         m_sec_params;           /**< Security requirements for this application. */
 
 
 /**@brief Function for initializing security parameters.

@@ -45,6 +45,7 @@ src/gap.c \
 src/advertising.c \
 src/connection.c \
 src/security.c \
+src/ble_stack.c \
 src/timer.c \
 src/scheduler.c \
 src/button.c \
