@@ -112,7 +112,7 @@ ASMFLAGS += -DS110
 ASMFLAGS += -DBOARD_PCA10001
 ASMFLAGS += -DBLE_STACK_SUPPORT_REQD
 #default target - first one defined
-default: clean nrf51822_xxac_s110
+default: nrf51822_xxac_s110
 
 #building all targets
 all: clean
@@ -209,5 +209,5 @@ cleanobj:
 # 	@echo Flashing: s110_softdevice.hex
 # 	nrfjprog --reset --program $(SDK_PATH)/components/softdevice/s110/hex/s110_softdevice.hex
 
-flash: all
+flash: nrf51822_xxac_s110
 	srec_cat $(SDK_PATH)/components/softdevice/s110/hex/s110_softdevice.hex -intel $(OUTPUT_BINARY_DIRECTORY)/nrf51822_xxac_s110.hex -intel -o /Volumes/MBED/firmware.hex -intel --line-length=44
