@@ -47,6 +47,7 @@ src/security.c \
 src/timer.c \
 src/scheduler.c \
 src/button.c \
+src/gpiote.c \
 src/power.c \
 $(SDK_PATH)/components/libraries/button/app_button.c \
 $(SDK_PATH)/components/libraries/util/app_error.c \

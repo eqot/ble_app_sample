@@ -50,14 +50,13 @@
 #include "timer.h"
 #include "scheduler.h"
 #include "button.h"
+#include "gpiote.h"
 #include "power.h"
 
 
 #define IS_SRVC_CHANGED_CHARACT_PRESENT 0                                           /**< Include or not the service_changed characteristic. if not enabled, the server's database cannot be changed for the lifetime of the device*/
 
 // YOUR_JOB: Modify these according to requirements.
-#define APP_GPIOTE_MAX_USERS            1                                           /**< Maximum number of users of the GPIOTE handler. */
-
 #define BUTTON_DETECTION_DELAY          APP_TIMER_TICKS(50, APP_TIMER_PRESCALER)    /**< Delay from a GPIOTE event until a button is reported as pushed (in number of timer ticks). */
 
 #define DEAD_BEEF                       0xDEADBEEF                                  /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
@@ -294,14 +293,6 @@ static void bsp_event_handler(bsp_event_t evt)
     }
 }
 */
-
-
-/**@brief Function for initializing the GPIOTE handler module.
- */
-static void gpiote_init(void)
-{
-    APP_GPIOTE_INIT(APP_GPIOTE_MAX_USERS);
-}
 
 
 /**@brief Function for initializing bsp module.
