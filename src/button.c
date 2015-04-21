@@ -6,6 +6,9 @@
 #include "button.h"
 
 
+#define BUTTON_DETECTION_DELAY      APP_TIMER_TICKS(50, APP_TIMER_PRESCALER)    /**< Delay from a GPIOTE event until a button is reported as pushed (in number of timer ticks). */
+
+
 /**@brief Function for initializing the button handler module.
  */
 void buttons_init(void)
