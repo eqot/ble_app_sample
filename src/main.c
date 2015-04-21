@@ -26,21 +26,9 @@
 
 #include <stdint.h>
 #include <string.h>
-#include "nordic_common.h"
-#include "nrf.h"
-#include "nrf_delay.h"
-#include "app_error.h"
-#include "nrf_gpio.h"
-#include "nrf51_bitfields.h"
-#include "ble.h"
-#include "ble_hci.h"
-#include "ble_srv_common.h"
-#include "ble_advdata.h"
-#include "ble_conn_params.h"
 #include "app_scheduler.h"
 #include "softdevice_handler.h"
 #include "app_timer_appsh.h"
-#include "app_gpiote.h"
 #include "bsp.h"
 
 #include "error.h"
