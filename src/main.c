@@ -46,6 +46,7 @@
 #include "advertising.h"
 #include "security.h"
 #include "timer.h"
+#include "scheduler.h"
 #include "button.h"
 #include "power.h"
 
@@ -70,11 +71,6 @@
 #define DEAD_BEEF                       0xDEADBEEF                                  /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
 static uint16_t                         m_conn_handle = BLE_CONN_HANDLE_INVALID;    /**< Handle of the current connection. */
-
-// YOUR_JOB: Modify these according to requirements (e.g. if other event types are to pass through
-//           the scheduler).
-#define SCHED_MAX_EVENT_DATA_SIZE       sizeof(app_timer_event_t)                   /**< Maximum size of scheduler events. Note that scheduler BLE stack events do not contain any data, as the events are being pulled from the stack in the event handler. */
-#define SCHED_QUEUE_SIZE                10                                          /**< Maximum number of events in the scheduler queue. */
 
 
 /**@brief Callback function for asserts in the SoftDevice.
@@ -372,14 +368,6 @@ static void ble_stack_init(void)
     // Register with the SoftDevice handler module for BLE events.
     err_code = softdevice_sys_evt_handler_set(sys_evt_dispatch);
     APP_ERROR_CHECK(err_code);
-}
-
-
-/**@brief Function for the Event Scheduler initialization.
- */
-static void scheduler_init(void)
-{
-    APP_SCHED_INIT(SCHED_MAX_EVENT_DATA_SIZE, SCHED_QUEUE_SIZE);
 }
 
 

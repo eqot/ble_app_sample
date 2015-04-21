@@ -43,6 +43,7 @@ src/main.c \
 src/advertising.c \
 src/security.c \
 src/timer.c \
+src/scheduler.c \
 src/button.c \
 src/power.c \
 $(SDK_PATH)/components/libraries/button/app_button.c \
