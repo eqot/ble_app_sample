@@ -41,6 +41,7 @@ remduplicates = $(strip $(if $1,$(firstword $1) $(call remduplicates,$(filter-ou
 C_SOURCE_FILES += \
 src/main.c \
 src/advertising.c \
+src/connection.c \
 src/security.c \
 src/timer.c \
 src/scheduler.c \
