@@ -25,11 +25,7 @@
  */
 
 #include <stdint.h>
-#include <string.h>
 #include "app_scheduler.h"
-#include "softdevice_handler.h"
-#include "app_timer_appsh.h"
-#include "bsp.h"
 
 #include "error.h"
 #include "gap.h"
@@ -39,9 +35,9 @@
 #include "ble_stack.h"
 #include "timer.h"
 #include "scheduler.h"
-#include "button.h"
 #include "gpiote.h"
 #include "power.h"
+#include "bsp_module.h"
 
 
 /**@brief Function for initializing services that will be used by the application.
@@ -49,46 +45,6 @@
 static void services_init(void)
 {
     // YOUR_JOB: Add code to initialize the services used by the application.
-}
-
-
-/**@brief Function for handling a bsp event.
- *
- * @param[in]     evt                        BSP event.
- */
-/* YOUR_JOB: Uncomment this function if you need to handle button events.
-static void bsp_event_handler(bsp_event_t evt)
-{
-        switch (evt)
-        {
-            case BSP_EVENT_KEY_0:
-                // Code to handle BSP_EVENT_KEY_0
-                break;
-
-            // Handle any other event
-
-            default:
-                APP_ERROR_HANDLER(evt);
-                break;
-        }
-    }
-}
-*/
-
-
-/**@brief Function for initializing bsp module.
- */
-static void bsp_module_init(void)
-{
-    uint32_t err_code;
-    // Note: If the only use of buttons is to wake up, bsp_event_handler can be NULL.
-    err_code = bsp_init(BSP_INIT_LED | BSP_INIT_BUTTONS, APP_TIMER_TICKS(100, APP_TIMER_PRESCALER), NULL);
-    APP_ERROR_CHECK(err_code);
-    // Note: If the buttons will be used to do some task, assign bsp_event_handler, as shown below.
-    // err_code = bsp_init(BSP_INIT_LED | BSP_INIT_BUTTONS, APP_TIMER_TICKS(100, APP_TIMER_PRESCALER), bsp_event_handler);
-    // APP_ERROR_CHECK(err_code);
-    // Buttons initialization.
-    buttons_init();
 }
 
 

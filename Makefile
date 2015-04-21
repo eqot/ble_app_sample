@@ -51,6 +51,7 @@ src/scheduler.c \
 src/button.c \
 src/gpiote.c \
 src/power.c \
+src/bsp_module.c \
 $(SDK_PATH)/components/libraries/button/app_button.c \
 $(SDK_PATH)/components/libraries/util/app_error.c \
 $(SDK_PATH)/components/libraries/gpiote/app_gpiote.c \
