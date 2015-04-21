@@ -40,6 +40,7 @@ remduplicates = $(strip $(if $1,$(firstword $1) $(call remduplicates,$(filter-ou
 #source common to all targets
 C_SOURCE_FILES += \
 src/main.c \
+src/error.c \
 src/gap.c \
 src/advertising.c \
 src/connection.c \
