@@ -223,5 +223,8 @@ cleanobj:
 # 	@echo Flashing: s110_softdevice.hex
 # 	nrfjprog --reset --program $(SDK_PATH)/components/softdevice/s110/hex/s110_softdevice.hex
 
-flash: nrf51822_xxac_s110
+flash_ble_nano: nrf51822_xxac_s110
 	srec_cat $(SDK_PATH)/components/softdevice/s110/hex/s110_softdevice.hex -intel $(OUTPUT_BINARY_DIRECTORY)/nrf51822_xxac_s110.hex -intel -o /Volumes/MBED/firmware.hex -intel --line-length=44
+
+flash: nrf51822_xxac_s110
+	nrfjprog program -c $(OUTPUT_BINARY_DIRECTORY)/nrf51822_xxac_s110.hex -s $(SDK_PATH)/components/softdevice/s110/hex/s110_softdevice.hex
